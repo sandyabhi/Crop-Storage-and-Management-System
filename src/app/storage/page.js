@@ -2,9 +2,22 @@
 
 import Card from "@/components/Card/Card";
 import { sortRoomsByDistance } from "@/lib/utils";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const Storage = () => {
+  const router = useRouter();
+  const { data, status } = useSession();
+
+  if (status === "loading") {
+    return <div>Loading...</div>;
+  }
+
+  if (status === "unauthenticated") {
+    router.push("/login");
+  }
+
   const [roomData, setRoomData] = useState([]);
   const [sortedRooms, setSortedRooms] = useState([]);
 
@@ -40,7 +53,7 @@ const Storage = () => {
         throw new Error("Failed to fetch data");
       }
       const data = await res.json();
-      console.log(data[0].slug);
+      console.log(data[0].humidity);
       setRoomData(data);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -112,6 +125,7 @@ const Storage = () => {
           {sortedRooms?.map((room) => (
             <Card
               key={room.id}
+              id={room.id}
               title={room.title}
               location={room.location}
               capacity={room.capacity}
@@ -123,7 +137,7 @@ const Storage = () => {
       </div>
       {/* //// */}
       <div>
-        <h1>Geolocation Example</h1>
+        <h1>Geolocation </h1>
         {error && <p>{error}</p>}
         {latitude && longitude && (
           <p>

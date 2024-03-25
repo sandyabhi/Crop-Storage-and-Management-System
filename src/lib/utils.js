@@ -1,3 +1,10 @@
+import { clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs) {
+  return twMerge(clsx(inputs));
+}
+
 function deg2rad(deg) {
   return deg * (Math.PI / 180);
 }
@@ -20,7 +27,8 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
 }
 
 export function sortRoomsByDistance(rooms, currentLat, currentLon) {
-  return rooms.sort((room1, room2) => {
+  const sortedRoom = rooms;
+  return sortedRoom.sort((room1, room2) => {
     const distance1 = calculateDistance(
       currentLat,
       currentLon,
