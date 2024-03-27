@@ -21,16 +21,13 @@ const StorageSlugPage = () => {
 
   const fetchRoom = async () => {
     try {
-      const res = await fetch(`http://localhost:3000/api/rooms/${params.slug}`);
-
-      // console.log(await res.json());
+      const res = await fetch(`/api/rooms/${params.slug}`);
 
       const data = await res.json();
+
       setRoom(data);
-      console.log(data.temperature);
+
       setFormData(data);
-      console.log(formData.temperature);
-      console.log(room, "--");
     } catch (error) {
       console.error("Error fetching room:", error);
     }
@@ -42,8 +39,8 @@ const StorageSlugPage = () => {
 
   const handleConfirm = () => {
     setEditMode(false);
-    // Perform any save/update operation with formData
-    console.log("Form data:", formData);
+
+    // console.log("Form data:", formData);
     updateRoom();
   };
 

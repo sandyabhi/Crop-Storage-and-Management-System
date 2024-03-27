@@ -49,6 +49,7 @@ export default function Rooms() {
           throw new Error("Failed to fetch data");
         }
         const data = await res.json();
+        setFilteredRooms(data);
         setRooms(data);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -108,10 +109,53 @@ export default function Rooms() {
       setFilteredRooms(sortRoomsByDistance(data, latitude, longitude));
 
       // console.log(filteredRooms);
-    } else {
+    } else if (selectedOption !== "") {
       // console.log("=");
-
+      let data = rooms;
+      if (selectedRoomOption == "Empty") {
+        data = data.filter((room) => room.status == "Empty");
+      } else if (selectedRoomOption == "Occupied") {
+        data = data.filter((room) => room.status != "Empty");
+      }
+      setFilteredRooms(data);
+    } else {
       setFilteredRooms(rooms);
+    }
+  };
+
+  const applyFilter = () => {
+    if (selectedOption !== "" && selectedRoomOption !== "") {
+      let data = rooms
+        .filter((room) => room.crop === selectedOption)
+        .filter((room) =>
+          selectedRoomOption === "Empty"
+            ? room.status === "Empty"
+            : selectedRoomOption !== "" && room.status !== "Empty"
+        );
+
+      isChecked
+        ? setFilteredRooms(sortRoomsByDistance(data, latitude, longitude))
+        : setFilteredRooms(data);
+    } else if (selectedOption !== "") {
+      let data = rooms.filter((room) => room.crop === selectedOption);
+
+      isChecked
+        ? setFilteredRooms(sortRoomsByDistance(data, latitude, longitude))
+        : setFilteredRooms(data);
+    } else if (selectedRoomOption !== "") {
+      let data = rooms.filter((room) =>
+        selectedRoomOption === "Empty"
+          ? room.status === "Empty"
+          : selectedRoomOption !== "" && room.status !== "Empty"
+      );
+      isChecked
+        ? setFilteredRooms(sortRoomsByDistance(data, latitude, longitude))
+        : setFilteredRooms(data);
+    } else {
+      let data = rooms;
+      isChecked
+        ? setFilteredRooms(sortRoomsByDistance(data, latitude, longitude))
+        : setFilteredRooms(data);
     }
   };
 
@@ -128,9 +172,9 @@ export default function Rooms() {
   // }
 
   return (
-    <main className="bg-[#DDE6ED] text-black font-mono text-base font-bold flex min-h-screen flex-col items-center py-24 px-4">
+    <main className="bg-[#DDE6ED] text-black flex min-h-screen flex-col items-center py-24 px-4">
       <div className="p-4 md:px-8 md:py-6 rounded-3xl bg-gradient-to-br from-[#A5D7E8] to-[#576CBC]">
-        <div className="flex flex-wrap gap-4 md:gap-8 justify-center items-center">
+        <div className="flex flex-wrap gap-4 md:gap-8 justify-center items-center font-semibold">
           <div className="w-full md:w-auto">
             <select
               id="option"
@@ -171,9 +215,8 @@ export default function Rooms() {
           </div>
           <div>
             <Button
-              className="font-semibold"
-              variant="outline"
-              onClick={handleApplyFilter}
+              className="font-semibold bg-white text-black hover:text-white"
+              onClick={applyFilter}
             >
               Apply Filter
             </Button>
@@ -202,7 +245,7 @@ export default function Rooms() {
 
       {/* Geolocation */}
       <div className="mt-4">
-        <h1 className="text-xl md:text-2xl">Geolocation</h1>
+        <h1 className="text-2xl text-center">Your Geolocation</h1>
         {error && <p>{error}</p>}
         {latitude && longitude && (
           <p>

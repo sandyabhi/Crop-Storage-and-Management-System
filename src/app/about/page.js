@@ -5,15 +5,17 @@ import { CiGlobe } from "react-icons/ci";
 
 const About = () => {
   return (
-    <div className="bg-[#DDE6ED] flex min-h-screen flex-col items-center justify-between py-24 px-10">
+    <div className="bg-[#DDE6ED] flex min-h-screen flex-col items-center justify-between py-20 px-8">
       <div className="mb-10">
         <p className="text-center m-4 text-3xl">About the Harvest Hub:</p>
 
         <div>
           <p className="text-center">
-            From Farm to Table, Every Grain Counts “HARVEST HUB” Revolutionizing
-            Crop Storage and Management.
+            From Farm to Table, Every Grain Counts
+            <strong> “HARVEST HUB” </strong> Revolutionizing Crop Storage and
+            Management.
           </p>
+          <br />
           <p>
             The project, Harvest Hub, is a comprehensive solution for
             agricultural crop storage management in India. It integrates IoT
@@ -44,13 +46,16 @@ const About = () => {
             <p>
               Final Year Student at Kirodimal Institute of Technology, Raigarh
             </p>
-            <p>FullStack Web Developer</p>
+            <p>FullStack Web and Android Developer</p>
 
             <hr className="m-2 border-black" />
 
             <div className="flex justify-center gap-5">
               <p>
-                <a href="#" className="flex items-center">
+                <a
+                  href="https://github.com/sandyabhi"
+                  className="flex items-center"
+                >
                   <FaGithub className="mr-2" />
                   <span>Github</span>
                 </a>
@@ -75,7 +80,7 @@ const About = () => {
               </p>
               <p>
                 <a
-                  href="https://www.linkedin.com/in/sandeep-kumar-patel47/"
+                  href="https://sandeeppatel.netlify.app"
                   className="flex items-center"
                 >
                   <CiGlobe className="mr-2" />
@@ -90,11 +95,11 @@ const About = () => {
               className="w-full h-64 mb-4 object-cover"
               src="https://images.unsplash.com/photo-1707343848873-d6a834b5f9b9?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             />
-            <p>Sandeep Kumar Patel</p>
+            <p>Indramani Mehar</p>
             <p>
               Final Year Student at Kirodimal Institute of Technology, Raigarh
             </p>
-            <p>FullStack Web Developer</p>
+            <p>Iot Developer</p>
 
             <hr className="m-2 border-black" />
 
@@ -105,15 +110,7 @@ const About = () => {
                   <span>Github</span>
                 </a>
               </p>
-              <p>
-                <a
-                  href="https://twitter.com/abhisandeep47"
-                  className="flex items-center"
-                >
-                  <FaXTwitter className="mr-2" />
-                  <span>Twitter</span>
-                </a>
-              </p>
+
               <p>
                 <a
                   href="https://www.linkedin.com/in/sandeep-kumar-patel47/"
@@ -121,15 +118,6 @@ const About = () => {
                 >
                   <FaLinkedin className="mr-2" />
                   <span>Linkedin</span>
-                </a>
-              </p>
-              <p>
-                <a
-                  href="https://www.linkedin.com/in/sandeep-kumar-patel47/"
-                  className="flex items-center"
-                >
-                  <CiGlobe className="mr-2" />
-                  <span>Website</span>
                 </a>
               </p>
             </div>

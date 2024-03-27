@@ -7,14 +7,14 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 const Profile = () => {
   const { data, status } = useSession();
+  const pathname = usePathname();
   const router = useRouter();
 
   const handleLogout = () => {
@@ -28,9 +28,10 @@ const Profile = () => {
   };
 
   if (status === "unauthenticated") {
+    const isActive = pathname.startsWith("/login");
     return (
       <div>
-        <button className="p-2" onClick={handleLogin}>
+        <button className={isActive ? "border-b-2" : ""} onClick={handleLogin}>
           Login
         </button>
       </div>
@@ -51,15 +52,19 @@ const Profile = () => {
           </span>
         </DropdownMenuTrigger>
         <DropdownMenuContent>
-          <DropdownMenuItem>
-            <Link href="/profile">Profile</Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            <Link href="/about">Team</Link>
-          </DropdownMenuItem>
-          <DropdownMenuItem>
-            <Link href="/admin">Admin Portal</Link>
-          </DropdownMenuItem>
+          <Link href="/profile">
+            <DropdownMenuItem className="cursor-pointer">
+              Profile
+            </DropdownMenuItem>
+          </Link>
+          <Link href="/about">
+            <DropdownMenuItem className="cursor-pointer">Team</DropdownMenuItem>
+          </Link>
+          <Link href="/admin">
+            <DropdownMenuItem className="cursor-pointer">
+              Admin Portal
+            </DropdownMenuItem>
+          </Link>
           <DropdownMenuSeparator />
           <DropdownMenuItem className="cursor-pointer" onClick={handleLogout}>
             Logout

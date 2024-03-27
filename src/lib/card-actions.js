@@ -1,14 +1,6 @@
 export const checkSuitableCrop = (temperature, humidity) => {
   const cropsToAdd = [];
 
-  if (
-    temperature >= 10 &&
-    temperature <= 15 &&
-    humidity >= 12 &&
-    humidity <= 14
-  ) {
-    cropsToAdd.push("Maze");
-  }
   if (temperature >= 16 && temperature <= 20 && humidity == 60) {
     cropsToAdd.push("Rice");
   }

@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 
 export default function Home() {
@@ -12,18 +13,18 @@ export default function Home() {
         className="absolute inset-0 w-full h-full object-cover"
       />
       <div className="absolute inset-0 flex items-center justify-center">
-        <div className="text-3xl text-center text-white font-semibold font-sans">
+        <div className="text-4xl text-center text-white font-semibold font-sans">
           <p className="mb-4">From Farm to Table, Every Grain Counts</p>
           <p className="mb-4">“HARVEST HUB”</p>
           <p className="mb-8">Revolutionizing Crop Storage and Management.</p>
-          <button
+          <Button
             onClick={() => {
               router.push("/rooms");
             }}
-            className="py-2 px-3 bg-teal-400 rounded-lg border-white border-2 text-white font-semibold text-xl"
+            className="px-5 py-4 bg-teal-500 rounded-lg border-white border-2 text-white font-semibold text-2xl"
           >
             Discover
-          </button>
+          </Button>
         </div>
       </div>
     </div>
