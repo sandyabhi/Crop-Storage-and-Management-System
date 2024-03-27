@@ -44,7 +44,7 @@ export default function Rooms() {
 
     const getData = async () => {
       try {
-        const res = await fetch("http://localhost:3000/api/rooms");
+        const res = await fetch("/api/rooms");
         if (!res.ok) {
           throw new Error("Failed to fetch data");
         }
