@@ -1,4 +1,7 @@
 import React from "react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import { CiGlobe } from "react-icons/ci";
 
 const About = () => {
   return (
@@ -30,10 +33,11 @@ const About = () => {
 
       <div className="mb-10">
         <p className="text-center m-4 text-3xl">About the Team:</p>
-        <div className="flex flex-col md:flex-row items-center justify-center md:justify-between text-center md:mx-auto max-w-screen-lg">
-          <div className="flex flex-col items-center text-center w-96 mb-8 md:mb-0">
+        <div className="flex flex-col md:flex-row items-center justify-center gap-5 md:justify-evenly text-center max-w-screen-lg mx-auto">
+          {/* Cards */}
+          <div className="flex flex-col items-center text-center mb-8 shadow-md bg-slate-100 p-4">
             <img
-              className="w-56 h-56 mb-4"
+              className="w-full h-64 mb-4 object-cover"
               src="https://images.unsplash.com/photo-1707343848873-d6a834b5f9b9?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             />
             <p>Sandeep Kumar Patel</p>
@@ -41,69 +45,97 @@ const About = () => {
               Final Year Student at Kirodimal Institute of Technology, Raigarh
             </p>
             <p>FullStack Web Developer</p>
-            <div className="flex justify-center md:justify-between gap-5">
-              <p>Github</p>
-              <p>Linkedin</p>
-              <p>Twitter</p>
+
+            <hr className="m-2 border-black" />
+
+            <div className="flex justify-center gap-5">
+              <p>
+                <a href="#" className="flex items-center">
+                  <FaGithub className="mr-2" />
+                  <span>Github</span>
+                </a>
+              </p>
+              <p>
+                <a
+                  href="https://twitter.com/abhisandeep47"
+                  className="flex items-center"
+                >
+                  <FaXTwitter className="mr-2" />
+                  <span>Twitter</span>
+                </a>
+              </p>
+              <p>
+                <a
+                  href="https://www.linkedin.com/in/sandeep-kumar-patel47/"
+                  className="flex items-center"
+                >
+                  <FaLinkedin className="mr-2" />
+                  <span>Linkedin</span>
+                </a>
+              </p>
+              <p>
+                <a
+                  href="https://www.linkedin.com/in/sandeep-kumar-patel47/"
+                  className="flex items-center"
+                >
+                  <CiGlobe className="mr-2" />
+                  <span>Website</span>
+                </a>
+              </p>
             </div>
           </div>
-
-          <div className="flex flex-col items-center text-center w-96">
+          {/* Second Card */}
+          <div className="flex flex-col items-center text-center mb-8 shadow-md bg-slate-100 p-4">
             <img
-              className="w-56 h-56 mb-4"
+              className="w-full h-64 mb-4 object-cover"
               src="https://images.unsplash.com/photo-1707343848873-d6a834b5f9b9?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             />
-            <p>Indramani Mehar</p>
+            <p>Sandeep Kumar Patel</p>
             <p>
               Final Year Student at Kirodimal Institute of Technology, Raigarh
             </p>
-            <p>IoT Developer</p>
-            <div className="flex justify-center md:justify-between gap-5">
-              <p>Github</p>
-              <p>Linkedin</p>
-              <p>Twitter</p>
+            <p>FullStack Web Developer</p>
+
+            <hr className="m-2 border-black" />
+
+            <div className="flex justify-center gap-5">
+              <p>
+                <a href="#" className="flex items-center">
+                  <FaGithub className="mr-2" />
+                  <span>Github</span>
+                </a>
+              </p>
+              <p>
+                <a
+                  href="https://twitter.com/abhisandeep47"
+                  className="flex items-center"
+                >
+                  <FaXTwitter className="mr-2" />
+                  <span>Twitter</span>
+                </a>
+              </p>
+              <p>
+                <a
+                  href="https://www.linkedin.com/in/sandeep-kumar-patel47/"
+                  className="flex items-center"
+                >
+                  <FaLinkedin className="mr-2" />
+                  <span>Linkedin</span>
+                </a>
+              </p>
+              <p>
+                <a
+                  href="https://www.linkedin.com/in/sandeep-kumar-patel47/"
+                  className="flex items-center"
+                >
+                  <CiGlobe className="mr-2" />
+                  <span>Website</span>
+                </a>
+              </p>
             </div>
           </div>
         </div>
       </div>
-      {/* <div>
-        <p className="text-center m-4 text-3xl">About the Team:</p>
-        <div className="w-full h-screen">
-          <div className="flex flex-col items-center text-center w-96">
-            <img
-              className="w-56 h-56"
-              src="https://images.unsplash.com/photo-1707343848873-d6a834b5f9b9?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            />
-            <p>Sandeep Kumar Patel</p>
-            <p>
-              Final Year Student at Kirodimal Institute of Technology, Raigarh
-            </p>
-            <p>FullStack Web Developer</p>
-            <div className="flex justify-between gap-5">
-              <p className="">Github</p>
-              <p className="">Linkedin</p>
-              <p>Twitter</p>
-            </div>
-          </div>
-
-          <div className="flex flex-col items-center text-center w-96">
-            <img
-              className="w-56 h-56"
-              src="https://images.unsplash.com/photo-1707343848873-d6a834b5f9b9?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-            />
-            <p>Indramani Mehar</p>
-            <p>
-              Final Year Student at Kirodimal Institute of Technology, Raigarh
-            </p>
-            <p>FullStack Web Developer</p>
-            <div className="flex justify-between gap-5">
-              <p className="">Github</p>
-              <p className="">Linkedin</p>
-              <p>Twitter</p>
-            </div>
-          </div>
-        </div>
-      </div> */}
     </div>
   );
 };

@@ -1,3 +1,7 @@
+import { FaGithub, FaTwitter, FaLinkedin } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+import Link from "next/link";
+
 const Footer = () => {
   return (
     // <div className="fixed bottom-0 flex w-full justify-center border-t border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
@@ -7,15 +11,33 @@ const Footer = () => {
         property of their respective owners.
       </p>
 
-      <div className="flex flex-col md:flex-row justify-center md:justify-between">
+      <div className="flex md:flex-row justify-center gap-5">
         <p className="mb-2 md:mb-0">
-          <a href="#">Github</a>
+          <a href="#" className="flex items-center">
+            <FaGithub className="mr-2" />
+            <span>Github</span>
+          </a>
         </p>
         <p className="mb-2 md:mb-0">
-          <a href="#">Twitter</a>
+          <a
+            href="https://twitter.com/abhisandeep47"
+            className="flex items-center"
+          >
+            <FaXTwitter className="mr-2" />
+            <span>Twitter</span>
+          </a>
         </p>
         <p className="mb-2 md:mb-0">
-          <a href="#">About Us</a>
+          <a
+            href="https://www.linkedin.com/in/sandeep-kumar-patel47/"
+            className="flex items-center"
+          >
+            <FaLinkedin className="mr-2" />
+            <span>Linkedin</span>
+          </a>
+        </p>
+        <p className="mb-2 md:mb-0">
+          <Link href="/about">About Us</Link>
         </p>
       </div>
     </div>

@@ -26,8 +26,8 @@ const Card = ({
 
   return (
     <>
-      <Link href={`/storage/${id}`}>
-        <div className="bg-[#0B2447] bg-gradient-to-br from-[#0B2447] to-[#0F1035] p-2 rounded-lg text-white">
+      <Link href={`/rooms/${id}`}>
+        <div className="bg-[#0B2447] bg-gradient-to-br from-[#0B2447] to-[#0F1035] p-2 rounded-lg text-white shadow-md">
           <div className="text-base">
             <img
               className="w-80 h-48"

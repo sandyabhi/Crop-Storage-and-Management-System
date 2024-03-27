@@ -1,6 +1,7 @@
 "use client";
 
 import { signOut, useSession } from "next-auth/react";
+import Link from "next/link";
 import React from "react";
 import {
   DropdownMenu,
@@ -15,8 +16,6 @@ import { useRouter } from "next/navigation";
 const Profile = () => {
   const { data, status } = useSession();
   const router = useRouter();
-
-  //   console.log(data?.user?.image);
 
   const handleLogout = () => {
     signOut();
@@ -40,15 +39,31 @@ const Profile = () => {
 
   return (
     <div>
-      {/* <img src={data?.user.image} /> */}
-      {/* <p></p> */}
       <DropdownMenu>
-        <DropdownMenuTrigger>{data?.user.name}</DropdownMenuTrigger>
+        <DropdownMenuTrigger>
+          <span className="flex items-center justify-center">
+            <img
+              src={data?.user.image}
+              alt="img"
+              className="rounded-full w-8 h-8 mr-2"
+            />
+            <p>{data?.user.name}</p>
+          </span>
+        </DropdownMenuTrigger>
         <DropdownMenuContent>
-          <DropdownMenuItem>Profile</DropdownMenuItem>
-          <DropdownMenuItem>Team</DropdownMenuItem>
+          <DropdownMenuItem>
+            <Link href="/profile">Profile</Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem>
+            <Link href="/about">Team</Link>
+          </DropdownMenuItem>
+          <DropdownMenuItem>
+            <Link href="/admin">Admin Portal</Link>
+          </DropdownMenuItem>
           <DropdownMenuSeparator />
-          <DropdownMenuItem onClick={handleLogout}>Logout</DropdownMenuItem>
+          <DropdownMenuItem className="cursor-pointer" onClick={handleLogout}>
+            Logout
+          </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
     </div>

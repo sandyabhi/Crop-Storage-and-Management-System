@@ -1,23 +1,13 @@
 "use client";
 
 import { signIn, useSession } from "next-auth/react";
-import { useRouter } from "next/navigation";
+import React from "react";
 import { FaGoogle } from "react-icons/fa";
 
 const LoginPage = () => {
-  const router = useRouter();
   const { data, status } = useSession();
 
-  if (status === "loading") {
-    return <div>Loading...</div>;
-  }
-
-  if (status === "authenticated") {
-    router.push("/rooms");
-  }
-
   // console.log(data);
-
   return (
     <div className="bg-[#DDE6ED] min-h-screen p-8 md:p-24 flex justify-center items-center">
       <div className="text-center text-black bg-gradient-to-br from-[#A5D7E8] to-[#576CBC] p-6 rounded-lg">

@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import { useParams, useRouter } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
@@ -93,20 +94,6 @@ const StorageSlugPage = () => {
           </p>
         </div>
       </div>
-      {/* /// */}
-      {/* <div className="absolute bottom-0 left-0 p-4 text-white">
-        <p>{room?.title}</p>
-        <p>location: {room?.location}</p>
-        <p>
-          lat:{room?.latitude}, lon:{room?.longitude}
-        </p>
-        {/* <p>Capacity : {room?.capacity}</p>
-        <p>Temperature: {room?.temperature} C</p>
-        <p>Humidity : {room?.humidity} %</p>
-        <p>Suitable for {room?.crop}</p>
-        <p>Status: {room?.status}</p> */}
-      {/* </div> */}
-      {/* /// */}
       <div>
         <div className="flex flex-col gap-5 my-4">
           <label className="flex justify-between">
@@ -168,29 +155,16 @@ const StorageSlugPage = () => {
 
         <div className="my-5">
           {editMode ? (
-            <button
-              className="bg-green-500 px-4 py-2 rounded-md"
-              onClick={handleConfirm}
-            >
+            <Button className="bg-green-500 w-28" onClick={handleConfirm}>
               Confirm
-            </button>
+            </Button>
           ) : (
-            <button
-              className="bg-sky-500 px-4 py-2 rounded-md"
-              onClick={handleEdit}
-            >
+            <Button className="bg-sky-500 w-28" onClick={handleEdit}>
               Edit
-            </button>
+            </Button>
           )}
         </div>
       </div>
-      {/* //// */}
-      {/* <div>
-        <div className="flex justify-between w-80 m-10">
-          <button className="px-4 py-2 bg-green-500 rounded-md">Edit</button>
-          <button className="px-4 py-2 bg-red-600 rounded-md">Delete</button>
-        </div>
-      </div> */}
     </div>
   );
 };
