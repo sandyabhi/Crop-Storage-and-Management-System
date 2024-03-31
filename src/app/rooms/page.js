@@ -49,6 +49,7 @@ export default function Rooms() {
   const getData = async () => {
     try {
       const res = await axios.get(`${process.env.NEXT_PUBLIC_URL}/api/rooms`);
+      console.log(process.env.NEXT_PUBLIC_URL);
       const data = await res.data;
       setFilteredRooms(data);
       setRooms(data);
