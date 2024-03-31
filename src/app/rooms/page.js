@@ -6,6 +6,7 @@ import { sortRoomsByDistance } from "@/lib/utils";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import axios from "axios";
 // import Card from "@/components/Card/Card";
 
 export default function Rooms() {
@@ -42,22 +43,19 @@ export default function Rooms() {
       }
     );
 
-    const getData = async () => {
-      try {
-        const res = await fetch("/api/rooms");
-        if (!res.ok) {
-          throw new Error("Failed to fetch data");
-        }
-        const data = await res.json();
-        setFilteredRooms(data);
-        setRooms(data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
-
     getData();
   }, []);
+
+  const getData = async () => {
+    try {
+      const res = await axios.get(`${process.env.NEXT_PUBLIC_URL}/api/rooms`);
+      const data = await res.data;
+      setFilteredRooms(data);
+      setRooms(data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
 
   const handleOptionChange = (event) => {
     setSelectedOption(event.target.value);
@@ -133,6 +131,7 @@ export default function Rooms() {
             : selectedRoomOption !== "" && room.status !== "Empty"
         );
 
+      console.log(data);
       isChecked
         ? setFilteredRooms(sortRoomsByDistance(data, latitude, longitude))
         : setFilteredRooms(data);
@@ -159,17 +158,13 @@ export default function Rooms() {
     }
   };
 
-  // const cropFilter = () => {
-  //   roomData.filter((room) => room.crop === selectedOption);
-  // };
+  if (status === "loading") {
+    return <div>Loading...</div>;
+  }
 
-  // if (status === "loading") {
-  //   return <div>Loading...</div>;
-  // }
-
-  // if (status === "unauthenticated") {
-  //   router.push("/login");
-  // }
+  if (status === "unauthenticated") {
+    router.push("/login");
+  }
 
   return (
     <main className="bg-[#DDE6ED] text-black flex min-h-screen flex-col items-center py-24 px-4">
