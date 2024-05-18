@@ -226,6 +226,7 @@ export default function Rooms() {
           <Card
             key={room.id}
             id={room.id}
+            img={room.img}
             title={room.title}
             location={room.location}
             capacity={room.capacity}

@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 
 const Card = ({
   id,
+  img,
   title,
   capacity,
   location,
@@ -33,7 +34,8 @@ const Card = ({
               <img
                 className="w-80 h-48"
                 alt="img"
-                src="https://images.unsplash.com/photo-1708955743956-da1bb7f6fe6a?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                // src="https://images.unsplash.com/photo-1708955743956-da1bb7f6fe6a?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src={img}
               />
               <div className="bg-opacity-50 bg-black absolute bottom-0 left-0 pr-2">
                 <p>{title}</p>
