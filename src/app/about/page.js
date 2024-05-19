@@ -2,6 +2,8 @@ import React from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { CiGlobe } from "react-icons/ci";
+import sandy from "../../../public/sandy.jpg";
+import indra from "../../../public/indramani.jpg";
 
 const About = () => {
   return (
@@ -39,8 +41,9 @@ const About = () => {
           {/* Cards */}
           <div className="flex flex-col items-center text-center mb-8 shadow-md bg-slate-100 p-4">
             <img
-              className="w-full h-64 mb-4 object-cover"
-              src="https://images.unsplash.com/photo-1707343848873-d6a834b5f9b9?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              className="w-full h-64 mb-4 object-fill"
+              // src="https://images.unsplash.com/photo-1707343848873-d6a834b5f9b9?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src={sandy.src}
             />
             <p>Sandeep Kumar Patel</p>
             <p>
@@ -62,7 +65,7 @@ const About = () => {
               </p>
               <p>
                 <a
-                  href="https://twitter.com/abhisandeep47"
+                  href="https://twitter.com/sandy__abhi"
                   className="flex items-center"
                 >
                   <FaXTwitter className="mr-2" />
@@ -93,7 +96,8 @@ const About = () => {
           <div className="flex flex-col items-center text-center mb-8 shadow-md bg-slate-100 p-4">
             <img
               className="w-full h-64 mb-4 object-cover"
-              src="https://images.unsplash.com/photo-1707343848873-d6a834b5f9b9?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              // src="https://images.unsplash.com/photo-1707343848873-d6a834b5f9b9?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src={indra.src}
             />
             <p>Indramani Mehar</p>
             <p>
